@@ -1,5 +1,6 @@
 import json
 import socket
+import requests
 from time import sleep
 from debug import dbprint
 from colorama import init, Fore, Back, Style
@@ -78,6 +79,22 @@ def chat(joinMessage="True"):
         elif chatmsg.startswith("!link"):
             send("You should checkout this wonderful person:")
             send("http://twitch.tv/" + chatmsg[6:])
+        elif chatmsg.startswith("am I important?"):
+            if checkMod(username) is True:
+                send("Well you're a mod, I'll let you be the judge!")
+            elif checkMod(username) is False:
+                send("Every viewer is important!")
+
+
+def checkMod(username):
+    data = "http://tmi.twitch.tv/group/user/thebloodyscreen/chatters"
+    userdata = json.loads(requests.get(data).content.decode('utf-8'))
+    chatters = userdata['chatters']
+    dbprint("info", str(chatters))
+    if username in chatters['moderators']:
+        return True
+    else:
+        return False
 
 
 chat()
