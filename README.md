@@ -1,1 +1,1 @@
-A very simple twitch chatbot made using https://github.com/tsukle/twpy
+A very simple twitch chatbot

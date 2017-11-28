@@ -1,0 +1,10 @@
+{
+    "username": "accountname of your bot",
+    "authkey": "https://twitchapps.com/tmi/",
+    "channel": "channel your bot is supposed to join",
+    "dbhost": "your database host ip/domain",
+    "dnuser": "your databese user",
+    "dbname": "name of your database",
+    "dbpass": "password for your database",
+    "dbcharset": "UTF-8"
+}
