@@ -1,0 +1,5 @@
+twitch:
+  username: usernameOfBotAccount
+  authkey: oauth:abcdefghijklmnopqrstuvw123456789
+  channel: nameOfChannelToJoin
+  dbcharset: UTF-8
